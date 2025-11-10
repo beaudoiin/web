@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="This is a basic HTML template.">
+    <meta name="keywords" content="HTML, CSS, template">
+    <meta name="author" content="Eric Beaudoin">
+    <title>Template</title>
+    <style>
+        body { font: 16px/1.5 system-ui, sans-serif; padding: 2rem; }
+        a { display:inline-block; text-decoration: underline; }
+
+        /* 1) Slippery: jumps when hovered */
+        a.slip { transition: transform .02s; }
+        a.slip:hover { transform: translate(234px,-136px); }
+
+        /* 2) Jitter: wiggles while you aim */
+        a.jitter:hover { animation: jitter .1s infinite steps(55); }
+        @keyframes jitter {
+            0% { transform: translate(0,0) }
+            20% { transform: translate(32px,-4px) }
+            40% { transform: translate(-10px,3px) }
+            60% { transform: translate(6px,44px) }
+            80% { transform: translate(-90px,-6px) }
+            100% { transform: translate(0,0) }
+        }
+
+        /* 3) Bump: expands padding so the text moves away */
+        a.bump { transition: margin .06s, padding .06s; }
+        a.bump:hover { margin-left: 18px; padding-right: 18px; }
+
+        /* 4) Shrink hitbox on hover (still visible, tiny target) */
+        a.shrink { padding: 8px 12px; }
+        a.shrink:hover { padding: 0 2px; }
+
+        /* 5) Cursor vanish on hover (mean) */
+        a.vanish:hover { cursor: none; }
+
+        /* 6) Decoy overlay near the link (blocks first try) */
+        .decoy-wrap { position: relative; display:inline-block; }
+        .decoy-wrap .decoy {
+            position: absolute; inset: -6px -6px 6px 24px;  /* shift hitbox */
+            content: ""; pointer-events: auto;              /* eats clicks */
+        }
+        .decoy-wrap:hover .decoy { inset: auto; }         /* remove when hovered long enough */
+    </style>
+</head>
+<body style="background-color: #fa9914;">
+<p>Booting brain, please wait...</p>
+<p>This may take a while....</p>
+<br>
+<p>...come back later. <a href="" class="slip bump vanish">Click here to go away!</a></p>
+<img src="https://media.tenor.com/kWgGwODhUVIAAAAM/under-construction.gif" width="262.5" height="99.0340909090909" alt="a sign that says under construction in red" loading="lazy">
+<img src="https://media.tenor.com/ZKclWmnC53wAAAAM/no-down.gif" width="262.5" height="262.5" alt="a man wearing a hard hat and glasses is making a thumbs down sign" loading="lazy">
+<img src="https://media.tenor.com/LOOtOnUPARoAAAAM/paper-construction.gif" width="262.5" height="262.5" alt="a man wearing a hard hat is holding a piece of paper in his hand" loading="lazy">
+
+<script src="https://my.gblearn.com/js/loadscript.js"></script>
+</body>
+</html>
